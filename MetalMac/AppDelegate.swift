@@ -10,6 +10,7 @@ import Cocoa
 import Metal
 import GLKit
 import CoreVideo
+import CoreGraphics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -35,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if device == nil {
             setupMetal()
         }
-
+        loadImage()
         
         let did = CGMainDisplayID()
         CVDisplayLinkCreateWithCGDisplay(did, &displayLink)
@@ -134,10 +135,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         queue = device.newCommandQueue()
         
-        let a = Vertex(x: -1.0, y: -1.0, z: 0.0, r: 1.0, g: 0.0, b: 0.0, a: 1.0)
-        let b = Vertex(x: 0.0, y: 1.0, z: 0.0, r: 0.0, g: 1.0, b: 0.0, a: 1.0)
-        let c = Vertex(x: 1.0, y: -1.0, z: 0.0, r: 0.0, g: 0.0, b: 1.0, a: 1.0)
-        triangle = Node(name: "Triangle", vertexs: [a,b,c], device: device)
+//        let a = Vertex(x: -1.0, y: -1.0, z: 0.0, r: 1.0, g: 0.0, b: 0.0, a: 1.0)
+//        let b = Vertex(x: 0.0, y: 1.0, z: 0.0, r: 0.0, g: 1.0, b: 0.0, a: 1.0)
+//        let c = Vertex(x: 1.0, y: -1.0, z: 0.0, r: 0.0, g: 0.0, b: 1.0, a: 1.0)
+//        triangle = Node(name: "Triangle", vertexs: [a,b,c], device: device)
         
         cube = Cube(device:device)
 //        cube.s = 0.5
@@ -161,6 +162,55 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         self.textView.string = info
     }
     
+    var texture:MTLTexture?
+    
+    func loadImage(){
+        guard let path = NSBundle.mainBundle().pathForResource("297", ofType: "jpg") else{
+            return
+        }
+//        guard let path = NSBundle.mainBundle().pathForResource("171", ofType: "png") else{
+//            return
+//        }
+        guard let image = NSImage(contentsOfFile: path) else{
+            return
+        }
+        let width = Int(image.size.width)
+        let height = Int(image.size.height)
+
+        guard let data = image.TIFFRepresentation else{
+            return
+        }
+        guard let bitmap = NSBitmapImageRep(data: data) else{
+            return
+        }
+        
+        let pixel = bitmap.bitmapData
+        var offset = 0
+        
+        var buffer = [UInt8](count:width * height * 4, repeatedValue:255)
+        for l in 0..<height {
+            for r in 0..<width{
+                buffer[l * width * 4 + r * 4 ] = pixel[offset]
+                offset += 1
+                buffer[l * width * 4 + r * 4 + 1] = pixel[offset]
+                offset += 1
+                buffer[l * width * 4 + r * 4 + 2] = pixel[offset]
+                offset += 1
+                if bitmap.bitsPerPixel == 32 {
+                    buffer[l * width * 4 + r * 4 + 3] = pixel[offset]
+                    offset += 1
+                }
+            }
+        }
+        
+        let descriptor = MTLTextureDescriptor.texture2DDescriptorWithPixelFormat(.RGBA8Unorm, width: width, height: height, mipmapped: true)
+        texture = self.device.newTextureWithDescriptor(descriptor)
+        if let tex = texture{
+            tex.replaceRegion(MTLRegionMake2D(0, 0, width, height), mipmapLevel: 0, withBytes: buffer, bytesPerRow: width * 4)
+        }
+    }
+    
+    
     func render(){
         autoreleasepool { 
         
@@ -180,7 +230,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let vp = GLKMatrix4Multiply(pm, vm)
             
             cube.update(delay)
-            cube.render(drawable.texture, command: command, pipelineState: pipelineState, projectionMatrix: vp)
+            cube.render(drawable.texture, skin: texture!, command: command, pipelineState: pipelineState, projectionMatrix: vp)
             
             command.presentDrawable(drawable)
             command.commit()

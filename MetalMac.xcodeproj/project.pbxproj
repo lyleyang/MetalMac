@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261D3B041D3F8357003372A6 /* 297.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 261D3B031D3F8357003372A6 /* 297.jpg */; };
 		268E10271D23B8900044A2A7 /* File.metal in Sources */ = {isa = PBXBuildFile; fileRef = 268E10261D23B8900044A2A7 /* File.metal */; };
 		268E102B1D251F4E0044A2A7 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E102A1D251F4E0044A2A7 /* Node.swift */; };
 		26FC4D581D23A42B0045B255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FC4D571D23A42B0045B255 /* AppDelegate.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		261D3B031D3F8357003372A6 /* 297.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 297.jpg; sourceTree = "<group>"; };
 		268E10261D23B8900044A2A7 /* File.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = File.metal; sourceTree = "<group>"; };
 		268E102A1D251F4E0044A2A7 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		26FC4D541D23A42B0045B255 /* MetalMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +38,7 @@
 		26FC4D4B1D23A42B0045B255 = {
 			isa = PBXGroup;
 			children = (
+				261D3B031D3F8357003372A6 /* 297.jpg */,
 				26FC4D561D23A42B0045B255 /* MetalMac */,
 				26FC4D551D23A42B0045B255 /* Products */,
 			);
@@ -54,9 +57,9 @@
 			children = (
 				268E102A1D251F4E0044A2A7 /* Node.swift */,
 				26FC4D571D23A42B0045B255 /* AppDelegate.swift */,
+				268E10261D23B8900044A2A7 /* File.metal */,
 				26FC4D5B1D23A42C0045B255 /* MainMenu.xib */,
 				26FC4D5E1D23A42C0045B255 /* Info.plist */,
-				268E10261D23B8900044A2A7 /* File.metal */,
 			);
 			path = MetalMac;
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261D3B041D3F8357003372A6 /* 297.jpg in Resources */,
 				26FC4D5D1D23A42C0045B255 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
