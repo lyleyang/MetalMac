@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MetalViewController" customModule="MetalMac" customModuleProvider="target">
+            <connections>
+                <outlet property="renderView" destination="ssV-AD-Scq" id="PvL-Ib-f3e"/>
+                <outlet property="textView" destination="g2s-EV-PnZ" id="n9l-Od-Wfe"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="560" height="491"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgo-bX-BoA">
+                    <rect key="frame" x="414" y="0.0" width="146" height="491"/>
+                    <clipView key="contentView" id="7tP-1o-J7H">
+                        <rect key="frame" x="1" y="1" width="144" height="489"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView editable="NO" selectable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="g2s-EV-PnZ">
+                                <rect key="frame" x="0.0" y="0.0" width="144" height="489"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" red="0.96470588239999999" green="0.22352941179999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="144" height="489"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <attributedString key="textStorage">
+                                    <fragment content="text">
+                                        <attributes>
+                                            <color key="NSColor" red="0.96470588239999999" green="0.22352941179999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" metaFont="system" size="15"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="144" height="489"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="146" id="xCM-cy-4LR"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="jRI-Qm-e6C">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ced-3U-HeV">
+                        <rect key="frame" x="-100" y="-100" width="15" height="478"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ssV-AD-Scq">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="491"/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Wgo-bX-BoA" secondAttribute="bottom" id="4dd-9z-qME"/>
+                <constraint firstItem="Wgo-bX-BoA" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="MFu-mh-9Sz"/>
+                <constraint firstAttribute="bottom" secondItem="ssV-AD-Scq" secondAttribute="bottom" id="NRA-sR-11R"/>
+                <constraint firstItem="ssV-AD-Scq" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="RzN-8y-lmE"/>
+                <constraint firstItem="Wgo-bX-BoA" firstAttribute="leading" secondItem="ssV-AD-Scq" secondAttribute="trailing" id="Sje-Aj-eAw"/>
+                <constraint firstAttribute="trailing" secondItem="Wgo-bX-BoA" secondAttribute="trailing" id="uBH-6t-v0c"/>
+                <constraint firstItem="ssV-AD-Scq" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="zaK-jI-KHi"/>
+            </constraints>
+            <point key="canvasLocation" x="339" y="508.5"/>
+        </customView>
+    </objects>
+</document>

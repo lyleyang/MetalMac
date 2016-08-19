@@ -8,16 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		261D3B041D3F8357003372A6 /* 297.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 261D3B031D3F8357003372A6 /* 297.jpg */; };
-		268E10271D23B8900044A2A7 /* File.metal in Sources */ = {isa = PBXBuildFile; fileRef = 268E10261D23B8900044A2A7 /* File.metal */; };
-		268E102B1D251F4E0044A2A7 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268E102A1D251F4E0044A2A7 /* Node.swift */; };
+		26B7DF3B1D46103800A2CBF3 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7DF391D46103800A2CBF3 /* MetalViewController.swift */; };
+		26B7DF3C1D46103800A2CBF3 /* MetalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B7DF3A1D46103800A2CBF3 /* MetalViewController.xib */; };
+		26B7DF401D46371700A2CBF3 /* SoftRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7DF3E1D46371700A2CBF3 /* SoftRenderViewController.swift */; };
+		26B7DF411D46371700A2CBF3 /* SoftRenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B7DF3F1D46371700A2CBF3 /* SoftRenderViewController.xib */; };
+		26B7DF431D463A9100A2CBF3 /* File.metal in Sources */ = {isa = PBXBuildFile; fileRef = 26B7DF421D463A9100A2CBF3 /* File.metal */; };
+		26B7DF451D463AA300A2CBF3 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7DF441D463AA300A2CBF3 /* Node.swift */; };
 		26FC4D581D23A42B0045B255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FC4D571D23A42B0045B255 /* AppDelegate.swift */; };
 		26FC4D5D1D23A42C0045B255 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26FC4D5B1D23A42C0045B255 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		261D3B031D3F8357003372A6 /* 297.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 297.jpg; sourceTree = "<group>"; };
-		268E10261D23B8900044A2A7 /* File.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = File.metal; sourceTree = "<group>"; };
-		268E102A1D251F4E0044A2A7 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		26B7DF391D46103800A2CBF3 /* MetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
+		26B7DF3A1D46103800A2CBF3 /* MetalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetalViewController.xib; sourceTree = "<group>"; };
+		26B7DF3E1D46371700A2CBF3 /* SoftRenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoftRenderViewController.swift; sourceTree = "<group>"; };
+		26B7DF3F1D46371700A2CBF3 /* SoftRenderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoftRenderViewController.xib; sourceTree = "<group>"; };
+		26B7DF421D463A9100A2CBF3 /* File.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = File.metal; sourceTree = "<group>"; };
+		26B7DF441D463AA300A2CBF3 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		26FC4D541D23A42B0045B255 /* MetalMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FC4D571D23A42B0045B255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26FC4D5C1D23A42C0045B255 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -35,6 +43,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26B7DF381D46103800A2CBF3 /* metal */ = {
+			isa = PBXGroup;
+			children = (
+				26B7DF441D463AA300A2CBF3 /* Node.swift */,
+				26B7DF421D463A9100A2CBF3 /* File.metal */,
+				26B7DF391D46103800A2CBF3 /* MetalViewController.swift */,
+				26B7DF3A1D46103800A2CBF3 /* MetalViewController.xib */,
+			);
+			path = metal;
+			sourceTree = "<group>";
+		};
+		26B7DF3D1D46370400A2CBF3 /* SoftRender */ = {
+			isa = PBXGroup;
+			children = (
+				26B7DF3E1D46371700A2CBF3 /* SoftRenderViewController.swift */,
+				26B7DF3F1D46371700A2CBF3 /* SoftRenderViewController.xib */,
+			);
+			path = SoftRender;
+			sourceTree = "<group>";
+		};
 		26FC4D4B1D23A42B0045B255 = {
 			isa = PBXGroup;
 			children = (
@@ -55,9 +83,9 @@
 		26FC4D561D23A42B0045B255 /* MetalMac */ = {
 			isa = PBXGroup;
 			children = (
-				268E102A1D251F4E0044A2A7 /* Node.swift */,
+				26B7DF3D1D46370400A2CBF3 /* SoftRender */,
+				26B7DF381D46103800A2CBF3 /* metal */,
 				26FC4D571D23A42B0045B255 /* AppDelegate.swift */,
-				268E10261D23B8900044A2A7 /* File.metal */,
 				26FC4D5B1D23A42C0045B255 /* MainMenu.xib */,
 				26FC4D5E1D23A42C0045B255 /* Info.plist */,
 			);
@@ -122,8 +150,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B7DF411D46371700A2CBF3 /* SoftRenderViewController.xib in Resources */,
 				261D3B041D3F8357003372A6 /* 297.jpg in Resources */,
 				26FC4D5D1D23A42C0045B255 /* MainMenu.xib in Resources */,
+				26B7DF3C1D46103800A2CBF3 /* MetalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				268E102B1D251F4E0044A2A7 /* Node.swift in Sources */,
+				26B7DF431D463A9100A2CBF3 /* File.metal in Sources */,
+				26B7DF451D463AA300A2CBF3 /* Node.swift in Sources */,
+				26B7DF401D46371700A2CBF3 /* SoftRenderViewController.swift in Sources */,
 				26FC4D581D23A42B0045B255 /* AppDelegate.swift in Sources */,
-				268E10271D23B8900044A2A7 /* File.metal in Sources */,
+				26B7DF3B1D46103800A2CBF3 /* MetalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
